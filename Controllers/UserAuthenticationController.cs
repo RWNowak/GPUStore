@@ -50,5 +50,12 @@ namespace GPUStoreMVC.Controllers
                 return RedirectToAction(nameof(Login));
             }
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await authService.LogoutAsync();
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }

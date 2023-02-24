@@ -1,10 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@{
+    string username = User.Identity.Name;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie store</title>
+    <title>GPU Store</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/forms.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,23 +21,31 @@
 <body>
     <nav class="nav-bar">
         <div class="logo">
-            movie store
+            GPU STORE
         </div>
         <ul class="nav-link">
             <li><a class="active" a href="/home/index">Home</a></li>
             <li><a a href="/home/about">About</a></li>
-            <li>
-                <a href="#">Admin <i class="fa fa-caret-down"></i></a>
+            @if (User.IsInRole("Admin"))
+            {
+                <li>
+                    <a href="#">Admin <i class="fa fa-caret-down"></i></a>
 
                 <ul class="dropdown-nav-link">
                     <li><a href="/forms.html">Form</a></li>
                     <li><a href="/table.html">Table</a></li>
                     <li><a href="/movie-detail.html">Movie Detail</a></li>
-                    <li><a href="#">Link 4</a></li>
-                    <li><a href="#">Logout</a></li>
                 </ul>
-            </li>
-            <li><a href="/UserAuthentication/Login">Login</a></li>
+                </li>
+            }
+            @if (string.IsNullOrEmpty(username))
+            {
+                <li><a href="/UserAuthentication/Login">Login</a></li>
+            }
+            else
+            {
+                <li><a href="/UserAuthentication/Logout">Logout</a></li>
+            }           
         </ul>
     </nav>
     <div class="container">
