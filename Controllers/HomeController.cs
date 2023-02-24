@@ -8,5 +8,9 @@ namespace GPUStoreMVC.Controllers
         {
             return View();
         }
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }
