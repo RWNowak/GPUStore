@@ -43,7 +43,7 @@ namespace GPUStoreMVC.Controllers
             var result = _gpuService.Add(model);
             if (result)
             {
-                TempData["msg"] = "Added Successfully";
+                TempData["msg"] = "GPU added successfully";
                 return RedirectToAction(nameof(Add));
             }
             else
@@ -79,7 +79,7 @@ namespace GPUStoreMVC.Controllers
             var result = _gpuService.Edit(model);
             if (result)
             {
-                TempData["msg"] = "Edited Successfully";
+                TempData["msg"] = "GPU edited successfully";
                 return RedirectToAction(nameof(GPUList));
             }
             else
