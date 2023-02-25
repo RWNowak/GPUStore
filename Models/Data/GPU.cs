@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GPUStoreMVC.Models.Data
 {
@@ -26,5 +28,9 @@ namespace GPUStoreMVC.Models.Data
         [StringLength(50)]
         public string? Memory { get; set; }
         public string? GPUImage { get; set; }
+
+        [NotMapped]
+        public IFormFile ImageFile { get; set; }
+
     }
 }

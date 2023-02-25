@@ -1,4 +1,5 @@
 ﻿using GPUStoreMVC.Models.Data;
+using GPUStoreMVC.Models.Other;
 
 namespace GPUStoreMVC.Repositories.Abstract
 {
@@ -8,6 +9,7 @@ namespace GPUStoreMVC.Repositories.Abstract
         bool Update(GPU model);
         GPU GetById(int id);
         bool Delete(int id);
+        GPUListVM List(string term = "", bool paging = false, int currentPage = 0);
 
     }
 }

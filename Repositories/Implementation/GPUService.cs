@@ -1,6 +1,7 @@
 ﻿using GPUStoreMVC.Models.Data;
 using GPUStoreMVC.Models.Other;
 using GPUStoreMVC.Repositories.Abstract;
+using System.Security.Cryptography.X509Certificates;
 
 namespace GPUStoreMvc.Repositories.Implementation
 {
@@ -54,7 +55,6 @@ namespace GPUStoreMvc.Repositories.Implementation
 
             var list = ctx.GPUs.ToList();
 
-
             if (!string.IsNullOrEmpty(term))
             {
                 term = term.ToLower();
@@ -89,6 +89,10 @@ namespace GPUStoreMvc.Repositories.Implementation
             {
                 return false;
             }
+        }
+        public List<GPU> GetAll()
+        {
+            return ctx.GPUs.ToList();
         }
     }
 }
