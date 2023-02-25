@@ -61,7 +61,7 @@ namespace GPUStoreMVC.Controllers
 
 
         [HttpPost]
-        public IActionResult Edit(GPU model)
+        public IActionResult Edit(int GPUID, GPU model)
         {
             if (!ModelState.IsValid)
                 return View(model);
@@ -76,7 +76,7 @@ namespace GPUStoreMVC.Controllers
                 var imageName = fileResult.Item2;
                 model.GPUImage = imageName;
             }
-            var result = _gpuService.Update(model);
+            var result = _gpuService.Edit(model);
             if (result)
             {
                 TempData["msg"] = "Edited Successfully";

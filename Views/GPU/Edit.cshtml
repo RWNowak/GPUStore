@@ -2,7 +2,7 @@
 @{
 }
 
-<form class="w-40" asp-action="Update" method="post" enctype="multipart/form-data">
+<form class="w-40" asp-action="Edit" method="post" enctype="multipart/form-data">
     <h2 class="pb-10">Edit GPU</h2>
     <input type="hidden" class="input" asp-for="GPUID">
     <input type="hidden" class="input" asp-for="GPUImage">
@@ -57,9 +57,6 @@
     <div class="input-container">
         <label asp-for="Name" class="w-40">Image</label>
         <input type="file" asp-for="ImageFile">
-    </div>
-    <div class="message-box pd-x-28 error">
-        <span asp-validation-for="ImageFile"> </span>
     </div>
 
     @if (TempData["msg"] != null)

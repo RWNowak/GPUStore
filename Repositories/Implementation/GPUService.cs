@@ -1,7 +1,6 @@
 ﻿using GPUStoreMVC.Models.Data;
 using GPUStoreMVC.Models.Other;
 using GPUStoreMVC.Repositories.Abstract;
-using System.Security.Cryptography.X509Certificates;
 
 namespace GPUStoreMvc.Repositories.Implementation
 {
@@ -75,7 +74,7 @@ namespace GPUStoreMvc.Repositories.Implementation
             return data;
         }
 
-        public bool Update(GPU model)
+        public bool Edit(GPU model)
         {
             try
             {
