@@ -25,10 +25,10 @@
                 <td><img style="height:60px;width:80px" src="/Uploads/@item.GPUImage" /></td>
                 <td>@item.Bus</td>
                 <td>@item.Memory</td>
-                @*<td>
-                    <a href="/Movie/Edit?id=@item.Id" class="btn btn-default"><i class="fa fa-edit"></i></a>
-                    <a onclick="return window.confirm('Are you sure?')" href="/Movie/Delete?id=@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                </td>*@
+                <td>
+                    <a href="/GPU/Edit?GPUID=@item.GPUID" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                    <a onclick="return window.confirm('Are you sure?')" href="/GPU/Delete?GPUID=@item.GPUID" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                </td>
             </tr>
         }
 

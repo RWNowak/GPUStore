@@ -53,6 +53,13 @@ namespace GPUStoreMVC.Controllers
             }
         }
 
+        public IActionResult Edit(int GPUID)
+        {
+            var model = _gpuService.GetById(GPUID);
+            return View(model);
+        }
+
+
         [HttpPost]
         public IActionResult Edit(GPU model)
         {
@@ -60,13 +67,13 @@ namespace GPUStoreMVC.Controllers
                 return View(model);
             if (model.ImageFile != null)
             {
-                var fileReult = this._fileService.SaveImage(model.ImageFile);
-                if (fileReult.Item1 == 0)
+                var fileResult = this._fileService.SaveImage(model.ImageFile);
+                if (fileResult.Item1 == 0)
                 {
                     TempData["msg"] = "File could not saved";
                     return View(model);
                 }
-                var imageName = fileReult.Item2;
+                var imageName = fileResult.Item2;
                 model.GPUImage = imageName;
             }
             var result = _gpuService.Update(model);
