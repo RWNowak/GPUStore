@@ -1,0 +1,39 @@
+﻿@model GPUStoreMVC.Models.Other.GPUListVM
+@{
+}
+
+<div class="tbl-container">
+    <h2>GPUs</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Chip</th>
+            <th>ReleaseDate</th>
+            <th>Bus</th>
+            <th>Memory</th>
+            <th>Image</th>
+        </tr>
+        @foreach (var item in Model.GPUList)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Chip</td>
+                <td>@item.ReleaseDate</td>
+                <td><img style="height:60px;width:80px" src="/Uploads/@item.GPUImage" /></td>
+                <td>@item.Bus</td>
+                <td>@item.Memory</td>
+                @*<td>
+                    <a href="/Movie/Edit?id=@item.Id" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                    <a onclick="return window.confirm('Are you sure?')" href="/Movie/Delete?id=@item.Id" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                </td>*@
+            </tr>
+        }
+
+    </table>
+    <div class="input-container">
+        <a href="/GPU/Add" class="btn btn-sec">Back</a>
+    </div>
+</div>

@@ -1,7 +1,9 @@
 ﻿using GPUStoreMVC.Models.Data;
+using GPUStoreMVC.Models.Other;
 using GPUStoreMVC.Repositories.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace GPUStoreMVC.Controllers
 {
@@ -9,10 +11,12 @@ namespace GPUStoreMVC.Controllers
     {
         private readonly IGPUService _gpuService;
         private readonly IFileService _fileService;
-        public GPUController(IGPUService GPUService, IFileService FileService)
+        private readonly DatabaseContext _dbcontext;
+        public GPUController(IGPUService GPUService, IFileService FileService, DatabaseContext dbcontext)
         {
             _gpuService = GPUService;
             _fileService = FileService;
+            _dbcontext = dbcontext;
         }
         public IActionResult Add()
         {
@@ -83,10 +87,21 @@ namespace GPUStoreMVC.Controllers
             return RedirectToAction(nameof(GPUList));
         }
 
-        public IActionResult GPUList(string term = "", bool paging = false, int currentPage = 0)
+        public IActionResult GPUList()
         {
-            var data = this._gpuService.List(term, paging, currentPage);
-            return View(data.GPUList);
+            //var data = this._gpuService.List();
+            //return View(data.GPUList);
+
+            var gpuList = _dbcontext.GPUs.AsQueryable();
+            var viewModel = new GPUListVM
+            {
+                GPUList = gpuList,
+                PageSize = 10,
+                CurrentPage = 1,
+                TotalPages = (int)Math.Ceiling(gpuList.Count() / (double)10)
+            };
+            return View(viewModel);
+
         }
 
     }

@@ -30,6 +30,6 @@ namespace GPUStoreMVC.Models.Data
 
         [NotMapped]
         public IFormFile ImageFile { get; set; }
-
+        
     }
 }
