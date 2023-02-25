@@ -79,7 +79,7 @@ namespace GPUStoreMVC.Controllers
             var result = _gpuService.Update(model);
             if (result)
             {
-                TempData["msg"] = "Added Successfully";
+                TempData["msg"] = "Edited Successfully";
                 return RedirectToAction(nameof(GPUList));
             }
             else
@@ -88,9 +88,9 @@ namespace GPUStoreMVC.Controllers
                 return View(model);
             }
         }
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int GPUID)
         {
-            var result = _gpuService.Delete(id);
+            var result = _gpuService.Delete(GPUID);
             return RedirectToAction(nameof(GPUList));
         }
 

@@ -26,11 +26,11 @@ namespace GPUStoreMvc.Repositories.Implementation
             }
         }
 
-        public bool Delete(int id)
+        public bool Delete(int GPUID)
         {
             try
             {
-                var data = this.GetById(id);
+                var data = this.GetById(GPUID);
                 if (data == null)
                     return false;
                 ctx.GPUs.Remove(data);
@@ -43,9 +43,9 @@ namespace GPUStoreMvc.Repositories.Implementation
             }
         }
 
-        public GPU GetById(int id)
+        public GPU GetById(int GPUID)
         {
-            return ctx.GPUs.Find(id);
+            return ctx.GPUs.Find(GPUID);
         }
 
         public GPUListVM List(string term = "", bool paging = false, int currentPage = 0)
