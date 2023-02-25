@@ -19,7 +19,6 @@ namespace GPUStoreMVC.Models.Data
         [StringLength(50)]
         public string? Chip { get; set; }
         [Required]
-        [StringLength(50)]
         public DateTime ReleaseDate { get; set; }
         [Required]
         [StringLength(50)]

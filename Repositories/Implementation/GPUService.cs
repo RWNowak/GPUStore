@@ -16,7 +16,6 @@ namespace GPUStoreMvc.Repositories.Implementation
         {
             try
             {
-
                 ctx.GPUs.Add(model);
                 ctx.SaveChanges();
                 return true;
@@ -81,7 +80,6 @@ namespace GPUStoreMvc.Repositories.Implementation
             try
             {
                 ctx.GPUs.Update(model);
-                // we have to add these genre ids in GPUGenre table
                 ctx.SaveChanges();
                 return true;
             }
