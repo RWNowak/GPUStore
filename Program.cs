@@ -1,3 +1,4 @@
+using GPUStoreMvc.Repositories.Implementation;
 using GPUStoreMVC.Models.Data;
 using GPUStoreMVC.Repositories.Abstract;
 using GPUStoreMVC.Repositories.Implementation;
@@ -10,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IUserAuthentication, UserAuthentication>();
 builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("conn")));
+builder.Services.AddScoped<IFileService, FileService>();
+builder.Services.AddScoped<IGPUService, GPUService>();
 
 // Identity
 builder.Services.AddIdentity<User, IdentityRole>()

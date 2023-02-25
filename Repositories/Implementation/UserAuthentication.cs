@@ -37,7 +37,6 @@ namespace GPUStoreMVC.Repositories.Implementation
                 UserName = model.Username,
                 Name = model.Name,
                 EmailConfirmed = true,
-                PhoneNumberConfirmed = true,
             };
             var result = await userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)

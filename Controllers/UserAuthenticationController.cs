@@ -46,7 +46,7 @@ namespace GPUStoreMVC.Controllers
             }
             else
             {
-                TempData["msg"] = "Could not log in";
+                TempData["msg"] = "Wrong username or password";
                 return RedirectToAction(nameof(Login));
             }
         }

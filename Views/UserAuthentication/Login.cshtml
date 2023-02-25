@@ -1,13 +1,16 @@
-﻿@model GPUStoreMVC.Models.Other.Login 
+﻿@model GPUStoreMVC.Models.Other.Login
+@{
+    Layout = "_LayoutClean";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie store</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/forms.css">
+    <title>GPU Store</title>
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
@@ -16,8 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
 </head>
     <body>
-    <form class="w-40" asp-action="Login" method="post">
-        <h2 class="pb-10">Login</h2>
+        <div class="login-container">
+            <form class="w-40" asp-action="Login" method="post">
+        <h1>Welcome Back!</h1>
+        <h2>Sign in into your account</h2>
         <div class="input-container">
             <label asp-for="Username" class="w-40">Username</label>
             <input type="text" class="input" asp-for="Username">
@@ -45,7 +50,9 @@
 
         <div class="input-container">
             <button class="btn btn-default" type="submit">Login</button>
+            
         </div>
-    </form>
+            </form>
+        </div>
     </body>
 </html>
