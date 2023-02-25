@@ -82,5 +82,12 @@ namespace GPUStoreMVC.Controllers
             var result = _gpuService.Delete(id);
             return RedirectToAction(nameof(GPUList));
         }
+
+        public IActionResult GPUList(string term = "", bool paging = false, int currentPage = 0)
+        {
+            var data = this._gpuService.List(term, paging, currentPage);
+            return View(data.GPUList);
+        }
+
     }
 }

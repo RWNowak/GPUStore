@@ -1,16 +1,21 @@
-﻿<div class="container">
+﻿@model GPUStoreMVC.Models.Other.GPUListVM
+@{
+    Layout = "_Layout";
+}
+<div class="container">
     <section class="search-bar">
         <form>
             <input type="text" placeholder="Search for GPUs...">
             <button type="submit"><i class="fa fa-search"></i></button>
+            <a class="btn btn-default" href="/Home/Index">All</a>
         </form>
     </section>
-    <section class="movies">
-        <div class="movie-card" onclick="window.location.href='/movie-detail.html'">
-            <div class="movie-image">
+    <section class="GPUs">
+        <div class="GPU-card" onclick="window.location.href='/GPU-detail.html'">
+            <div class="GPU-image">
                 <img src="https://picsum.photos/id/1/200/300">
             </div>
-            <div class="movie-info">
+            <div class="GPU-info">
                 <h4>GPU</h4>
                 <h4>X</h4>
                 <h4>X</h4>
@@ -18,24 +23,11 @@
             </div>
         </div>
 
-        <div class="movie-card">
-            <div class="movie-image">
+        <div class="GPU-card">
+            <div class="GPU-image">
                 <img src="https://picsum.photos/id/237/200/300">
             </div>
-            <div class="movie-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
-
-
-        <div class="movie-card">
-            <div class="movie-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="movie-info">
+            <div class="GPU-info">
                 <h4>GPU</h4>
                 <h4>X</h4>
                 <h4>X</h4>
@@ -44,11 +36,11 @@
         </div>
 
 
-        <div class="movie-card">
-            <div class="movie-image">
+        <div class="GPU-card">
+            <div class="GPU-image">
                 <img src="https://picsum.photos/id/237/200/300">
             </div>
-            <div class="movie-info">
+            <div class="GPU-info">
                 <h4>GPU</h4>
                 <h4>X</h4>
                 <h4>X</h4>
@@ -57,11 +49,11 @@
         </div>
 
 
-        <div class="movie-card">
-            <div class="movie-image">
+        <div class="GPU-card">
+            <div class="GPU-image">
                 <img src="https://picsum.photos/id/237/200/300">
             </div>
-            <div class="movie-info">
+            <div class="GPU-info">
                 <h4>GPU</h4>
                 <h4>X</h4>
                 <h4>X</h4>
@@ -70,11 +62,11 @@
         </div>
 
 
-        <div class="movie-card">
-            <div class="movie-image">
+        <div class="GPU-card">
+            <div class="GPU-image">
                 <img src="https://picsum.photos/id/237/200/300">
             </div>
-            <div class="movie-info">
+            <div class="GPU-info">
                 <h4>GPU</h4>
                 <h4>X</h4>
                 <h4>X</h4>
@@ -83,11 +75,11 @@
         </div>
 
 
-        <div class="movie-card">
-            <div class="movie-image">
+        <div class="GPU-card">
+            <div class="GPU-image">
                 <img src="https://picsum.photos/id/237/200/300">
             </div>
-            <div class="movie-info">
+            <div class="GPU-info">
                 <h4>GPU</h4>
                 <h4>X</h4>
                 <h4>X</h4>
@@ -96,11 +88,24 @@
         </div>
 
 
-        <div class="movie-card">
-            <div class="movie-image">
+        <div class="GPU-card">
+            <div class="GPU-image">
                 <img src="https://picsum.photos/id/237/200/300">
             </div>
-            <div class="movie-info">
+            <div class="GPU-info">
+                <h4>GPU</h4>
+                <h4>X</h4>
+                <h4>X</h4>
+                <h4>X</h4>
+            </div>
+        </div>
+
+
+        <div class="GPU-card">
+            <div class="GPU-image">
+                <img src="https://picsum.photos/id/237/200/300">
+            </div>
+            <div class="GPU-info">
                 <h4>GPU</h4>
                 <h4>X</h4>
                 <h4>X</h4>
@@ -110,11 +115,11 @@
 
 
 
-        <div class="movie-card">
-            <div class="movie-image">
+        <div class="GPU-card">
+            <div class="GPU-image">
                 <img src="https://picsum.photos/id/237/200/300">
             </div>
-            <div class="movie-info">
+            <div class="GPU-info">
                 <h4>GPU</h4>
                 <h4>X</h4>
                 <h4>X</h4>
@@ -123,11 +128,11 @@
         </div>
 
 
-        <div class="movie-card">
-            <div class="movie-image">
+        <div class="GPU-card">
+            <div class="GPU-image">
                 <img src="https://picsum.photos/id/237/200/300">
             </div>
-            <div class="movie-info">
+            <div class="GPU-info">
                 <h4>GPU</h4>
                 <h4>X</h4>
                 <h4>X</h4>
@@ -135,11 +140,11 @@
             </div>
         </div>
 
-        <div class="movie-card">
-            <div class="movie-image">
+        <div class="GPU-card">
+            <div class="GPU-image">
                 <img src="https://picsum.photos/id/237/200/300">
             </div>
-            <div class="movie-info">
+            <div class="GPU-info">
                 <h4>GPU</h4>
                 <h4>X</h4>
                 <h4>X</h4>
