@@ -63,13 +63,13 @@
         <div>
             <img src="@Url.Content("~/uploads/" + Model.GPUImage)" width="150px" height="150px" />
         </div>
-        <div style="display:flex;justify-content:center;align-items:center;">
+        <div style="display:flex;justify-content:center;align-items:center;margin-left: 30px;">
             <div>
                 <label asp-for="ImageFile" class="btn btn-default">Edit Image</label>
                 <input type="file" asp-for="ImageFile" style="display:none" />
             </div>
         </div>
-    <div/>
+    </div>
 
     <div class="input-container">
         <button class="btn btn-default" type="submit">Save</button>
