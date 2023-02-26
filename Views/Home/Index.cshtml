@@ -1,4 +1,5 @@
-﻿@model GPUStoreMVC.Models.Other.GPUListVM
+﻿@using GPUStoreMVC.Models.Data;
+@model GPUStoreMVC.Models.Other.GPUListVM
 @{
     Layout = "_Layout";
 }
@@ -11,146 +12,20 @@
         </form>
     </section>
     <section class="GPUs">
-        <div class="GPU-card" onclick="window.location.href='/GPU-detail.html'">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/1/200/300">
+        @foreach(var gpu in Model.GPUList)
+        {
+            <div class="GPU-card" onclick="window.location.href='/GPU-detail.html'">
+                <div class="GPU-image">
+                    <img src="/Uploads/@gpu.GPUImage">
+                </div>
+                <div class="GPU-info">
+                    <h4>@gpu.Name</h4>
+                    <h4>@gpu.Price $</h4>
+                    <h4>@gpu.Memory</h4>
+                </div>
             </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
+        }
 
-        <div class="GPU-card">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
-
-
-        <div class="GPU-card">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
-
-
-        <div class="GPU-card">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
-
-
-        <div class="GPU-card">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
-
-
-        <div class="GPU-card">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
-
-
-        <div class="GPU-card">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
-
-
-        <div class="GPU-card">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
-
-
-
-        <div class="GPU-card">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
-
-
-        <div class="GPU-card">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
-
-        <div class="GPU-card">
-            <div class="GPU-image">
-                <img src="https://picsum.photos/id/237/200/300">
-            </div>
-            <div class="GPU-info">
-                <h4>GPU</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-                <h4>X</h4>
-            </div>
-        </div>
     </section>
 
     <div class="pagination">

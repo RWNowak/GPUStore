@@ -61,13 +61,6 @@
         <span asp-validation-for="ImageFile"> </span>
     </div>
 
-    @if (TempData["msg"] != null)
-    {
-        <div class="alert mb-1">
-            @TempData["msg"]
-        </div>
-    }
-
     <div class="input-container">
         <button class="btn btn-default" type="submit">Save</button>
         <a class="btn btn-sec" href="/GPU/GPUList">All records</a>

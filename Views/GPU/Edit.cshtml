@@ -54,20 +54,17 @@
         <span asp-validation-for="Bus"> </span>
     </div>
 
-    <div class="input-container">
-        <label asp-for="Name" class="w-40">Image</label>
-        <input type="file" asp-for="ImageFile">
-    </div>
-
-    @if (TempData["msg"] != null)
-    {
-        <div class="alert mb-1">
-            @TempData["msg"]
+@*    <div class="input-container">
+    <label asp-for="ImageFile" class="w-40">Current Image</label>
+        <div>
+            <img src="@Url.Content("~/uploads/" + Model.GPUImage)" width="150px" height="150px" />
         </div>
-    }
-
+        <div>
+            <input type="file" asp-for="ImageFile" />
+        </div>
+    </div>*@
     <div class="input-container">
         <button class="btn btn-default" type="submit">Save</button>
-        <a class="btn btn-sec" href="/GPU/GPUList">All records</a>
+        <a class="btn btn-sec" href="/GPU/GPUList">All GPUs</a>
     </div>
 </form>
