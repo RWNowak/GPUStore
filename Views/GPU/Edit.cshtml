@@ -54,15 +54,23 @@
         <span asp-validation-for="Bus"> </span>
     </div>
 
-@*    <div class="input-container">
-    <label asp-for="ImageFile" class="w-40">Current Image</label>
+    <div class="input-container">
+        <div style="display:flex;justify-content:center;align-items:center;">
+            <div>
+                <label asp-for="ImageFile" class="w-30">Current Image</label>
+            </div>
+        </div>
         <div>
             <img src="@Url.Content("~/uploads/" + Model.GPUImage)" width="150px" height="150px" />
         </div>
-        <div>
-            <input type="file" asp-for="ImageFile" />
+        <div style="display:flex;justify-content:center;align-items:center;">
+            <div>
+                <label asp-for="ImageFile" class="btn btn-default">Edit Image</label>
+                <input type="file" asp-for="ImageFile" style="display:none" />
+            </div>
         </div>
-    </div>*@
+    <div/>
+
     <div class="input-container">
         <button class="btn btn-default" type="submit">Save</button>
         <a class="btn btn-sec" href="/GPU/GPUList">All GPUs</a>
