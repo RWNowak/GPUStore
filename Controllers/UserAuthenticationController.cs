@@ -52,19 +52,19 @@ namespace GPUStoreMVC.Controllers
             }
         }
 
-        public IActionResult Registration()
+        public IActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Registration(Registration model)
+        public async Task<IActionResult> Register(Registration model)
         {
             if (!ModelState.IsValid) { return View(model); }
             model.Role = "user";
             var result = await this.authService.RegisterAsync(model);
             TempData["msg"] = result.Message;
-            return RedirectToAction(nameof(Registration));
+            return RedirectToAction(nameof(Register));
         }
 
         public async Task<IActionResult> Logout()

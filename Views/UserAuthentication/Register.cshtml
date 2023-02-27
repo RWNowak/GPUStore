@@ -8,26 +8,37 @@
 <head>
     <link rel="stylesheet" href="/css/authorisation.css">
 </head>
-    <body>
+<body>
     <div class="login-container">
         <form class="w-100" asp-action="Register" method="post">
-            <h1>Sign up to GPUStore</h1>
+            <h1>Sign Up</h1>
+            <h2>Become a member of GPU Store</h2>
+            <div class="input-container">
+                <label asp-for="Name" class="w-100">Name</label>
+                <input type="text" class="input" asp-for="Name">
+            </div>
             <div class="input-container">
                 <label asp-for="Username" class="w-100">Username</label>
                 <input type="text" class="input" asp-for="Username">
             </div>
             <div class="input-container">
+                <label asp-for="Email" class="w-100">Email</label>
+                <input type="text" class="input" asp-for="Email">
+            </div>
+            <div class="input-container" style="margin-top: -30px;">
                 <label asp-for="Password" class="w-100">Password</label>
                 <input type="password" class="input" asp-for="Password">
             </div>
             <div class="input-container">
-                <button class="btn btn-default" type="submit">Login</button>
-                <div class="button-container">
-                    <a href="#" class="small-link">Don't have an account? Sign Up</a>
-                    <a href="#" class="small-link back-button">Back</a>
+                <button class="btn btn-default" type="submit">Sign Up</button>
+                <div class="button-container" style="margin-top: 5px;">
+                    <a href="Login" class="small-link">Already have an account? Log In</a>
                 </div>
+            </div>
+            <div>
+                <a href="/Home/Index" class="small-link">Return</a>
             </div>
         </form>
     </div>
-    </body>
+</body>
 </html>

@@ -9,7 +9,7 @@
 }
 body {
   width: 100%;
-  min-height: 100vh;
+  min-height: 0vh;
   background-color: var(--bg-color);
   /* padding:0 3rem; */
   display: flex;
@@ -263,4 +263,12 @@ footer {
   .GPU-card {
     flex-basis: 96%;
   }
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 5px;
 }
