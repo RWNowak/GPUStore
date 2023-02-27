@@ -1,0 +1,21 @@
+﻿@model GPUStoreMVC.Models.Data.GPU
+@{
+}
+
+<div class="GPU-detail w-80 m-auto">
+    <div class="img-container">
+        <img alt="image" src="/Uploads/@Model.GPUImage">
+    </div>
+
+    <div class="detail-container">
+        <h3>@Model.Name</h3>
+        <h4>Price: @Model.Price $</h4>
+        <h4>Release Date: @Model.ReleaseDate</h4>
+        <h4>Chip: @Model.Chip</h4>
+        <h4>Bus: @Model.Bus</h4>
+        <h4>Memory: @Model.Memory</h4>
+    </div>
+</div>
+<div class="w-80 m-auto">
+    <a href="/Home/Index" class="btn btn-default">Back</a>
+</div>

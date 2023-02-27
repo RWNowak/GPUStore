@@ -12,14 +12,20 @@ namespace GPUStoreMVC.Controllers
         {
             _gpuService= GPUService;
         }
-        public IActionResult Index()
+        public IActionResult Index(string term ="", int currentpage = 1)
         {
-            var gpus = _gpuService.List();
+            var gpus = _gpuService.List(term, true, currentpage);
             return View(gpus);
         }
         public IActionResult About()
         {
             return View();
+        }
+
+        public IActionResult GPUDetail(int GPUID)
+        {
+            var gpu = _gpuService.GetById(GPUID);
+            return View(gpu);
         }
     }
 }

@@ -61,7 +61,6 @@ namespace GPUStoreMvc.Repositories.Implementation
 
             if (paging)
             {
-                // here we will apply paging
                 int pageSize = 5;
                 int count = list.Count;
                 int TotalPages = (int)Math.Ceiling(count / (double)pageSize);

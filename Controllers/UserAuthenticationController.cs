@@ -6,7 +6,7 @@ namespace GPUStoreMVC.Controllers
 {
     public class UserAuthenticationController : Controller
     {
-        private IUserAuthentication authService;
+        private readonly IUserAuthentication authService;
 
         public UserAuthenticationController(IUserAuthentication authService)
         {
@@ -42,18 +42,35 @@ namespace GPUStoreMVC.Controllers
             var result = await authService.LoginAsync(model);
             if (result.StatusCode == 1)
             {
+                TempData["msg"] = "Logged in successfully";
                 return RedirectToAction("Index", "Home");
             }
             else
             {
-                TempData["msg"] = "Wrong username or password";
+                TempData["error"] = "Wrong username or password";
                 return RedirectToAction(nameof(Login));
             }
+        }
+
+        public IActionResult Registration()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Registration(Registration model)
+        {
+            if (!ModelState.IsValid) { return View(model); }
+            model.Role = "user";
+            var result = await this.authService.RegisterAsync(model);
+            TempData["msg"] = result.Message;
+            return RedirectToAction(nameof(Registration));
         }
 
         public async Task<IActionResult> Logout()
         {
             await authService.LogoutAsync();
+            TempData["msg"] = "Logged out successfully";
             return RedirectToAction("Index", "Home");
         }
 
