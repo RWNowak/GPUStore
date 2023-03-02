@@ -60,11 +60,22 @@ namespace GPUStoreMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(Registration model)
         {
-            if (!ModelState.IsValid) { return View(model); }
+            if (!ModelState.IsValid) 
+            { 
+                return View(model); 
+            }
             model.Role = "user";
             var result = await this.authService.RegisterAsync(model);
-            TempData["msg"] = result.Message;
-            return RedirectToAction(nameof(Register));
+            if (result.StatusCode == 1)
+            {
+                TempData["msg"] = "Registered successfully";
+                return RedirectToAction(nameof(Login));
+            }
+            else
+            {
+                TempData["error"] = "Please ensure that the data is provided correctly";
+                return RedirectToAction(nameof(Register));
+            }
         }
 
         public async Task<IActionResult> Logout()
