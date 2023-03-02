@@ -15,6 +15,27 @@ namespace GPUStoreMvc.Repositories.Implementation
         {
             try
             {
+                if (model.Name.Length < 3)
+                {
+                    return false;
+                }
+                if (model.Bus.Length < 2)
+                {
+                    return false;
+                }
+                if (((long)model.Price) < 1)
+                {
+                    return false;
+                }
+                if (model.Bus.Length < 3)
+                {
+                    return false;
+                }
+
+                if (model.ImageFile == null)
+                {
+                    return false;
+                }
                 ctx.GPUs.Add(model);
                 ctx.SaveChanges();
                 return true;
