@@ -1,6 +1,7 @@
 ﻿using GPUStoreMVC.Models.Data;
 using GPUStoreMVC.Models.Other;
 using GPUStoreMVC.Repositories.Abstract;
+using System.Text;
 
 namespace GPUStoreMvc.Repositories.Implementation
 {
@@ -23,7 +24,7 @@ namespace GPUStoreMvc.Repositories.Implementation
                 {
                     return false;
                 }
-                if (((long)model.Price) < 1)
+                if (((long)model.Price) <= 1)
                 {
                     return false;
                 }
@@ -36,15 +37,25 @@ namespace GPUStoreMvc.Repositories.Implementation
                 {
                     return false;
                 }
+
+                if (model.Name.StartsWith("!") || model.Name.StartsWith(".") || model.Name.StartsWith(","))
+                {
+                    return false;
+                }
+
+
                 ctx.GPUs.Add(model);
                 ctx.SaveChanges();
                 return true;
+
+
             }
             catch (Exception ex)
             {
                 return false;
             }
         }
+
 
         public bool Delete(int GPUID)
         {
@@ -59,6 +70,7 @@ namespace GPUStoreMvc.Repositories.Implementation
             }
             catch (Exception ex)
             {
+
                 return false;
             }
         }
@@ -98,6 +110,33 @@ namespace GPUStoreMvc.Repositories.Implementation
         {
             try
             {
+
+                if (model.Name.Length < 3)
+                {
+                    return false;
+                }
+                if (model.Bus.Length < 2)
+                {
+                    return false;
+                }
+                if (((long)model.Price) <= 1)
+                {
+                    return false;
+                }
+                if (model.Bus.Length < 3)
+                {
+                    return false;
+                }
+
+                if (model.ImageFile == null)
+                {
+                    return false;
+                }
+
+                if (model.Name.StartsWith("!") || model.Name.StartsWith(".") || model.Name.StartsWith(","))
+                {
+                    return false;
+                }
                 ctx.GPUs.Update(model);
                 ctx.SaveChanges();
                 return true;
