@@ -168,6 +168,14 @@ footer {
   text-align: right;
 }
 
+.footer2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 10px;
+    text-align: center;
+    background-color: #ddd;
+}
 /* utilities start */
 .w-90 {
   width: 90%;
