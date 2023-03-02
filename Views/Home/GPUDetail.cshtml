@@ -1,21 +1,41 @@
-﻿@model GPUStoreMVC.Models.Data.GPU
+@model GPUStoreMVC.Models.Data.GPU
 @{
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 
-<div class="GPU-detail w-80 m-auto">
-    <div class="img-container">
-        <img alt="image" src="/Uploads/@Model.GPUImage">
-    </div>
+    <div class="GPU-detail w-80 m-auto">
+        <div class="img-container">
+            <img alt="image" src="/Uploads/@Model.GPUImage">
+        </div>
 
-    <div class="detail-container">
-        <h1>@Model.Name</h1>
-        <h4>Price: @Model.Price $</h4>
-        <h4>Release Date: @Model.ReleaseDate</h4>
-        <h4>Chip: @Model.Chip</h4>
-        <h4>Bus: @Model.Bus</h4>
-        <h4>Memory: @Model.Memory</h4>
+        <div class="detail-container">
+            <h1>@Model.Name</h1>
+            <p><span class="details">Price:</span> @Model.Price $</p>
+            <p><span class="details">Release Date: </span>@Model.ReleaseDate</p>
+            <p><span class="details">Chip:</span> @Model.Chip</p>
+            <p><span class="details">Bus:</span> @Model.Bus</p>
+            <p><span class="details">Memory:</span> @Model.Memory</p>
+        </div>
     </div>
-</div>
-<div class="w-80 m-auto">
-    <a href="/Home/Index" class="btn btn-default">Back</a>
-</div>
+    <div class="w-80 m-auto">
+        <a href="/Home/Index" class="btn btn-default">Back</a>
+    </div>
+<style>
+    .details{
+        font-weight:bold
+    }
+
+    .btn-default:hover{
+        color:lime
+        }
+</style>
+</body>
+</html>
