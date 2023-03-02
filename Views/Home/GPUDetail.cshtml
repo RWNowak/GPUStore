@@ -1,4 +1,4 @@
-﻿@model GPUStoreMVC.Models.Data.GPU
+@model GPUStoreMVC.Models.Data.GPU
 @{
 }
 <!DOCTYPE html>
@@ -10,6 +10,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <div class="GPU-detail w-80 m-auto">
         <div class="img-container">
             <img alt="image" src="/Uploads/@Model.GPUImage">
@@ -27,15 +28,14 @@
     <div class="w-80 m-auto">
         <a href="/Home/Index" class="btn btn-default">Back</a>
     </div>
+<style>
+    .details{
+        font-weight:bold
+    }
 
-    <style>
-        .details {
-            font-weight: bold
+    .btn-default:hover{
+        color:lime
         }
-
-        .btn-default:hover {
-            color: lime
-        }
-    </style>
+</style>
 </body>
 </html>
