@@ -168,6 +168,14 @@ footer {
   text-align: right;
 }
 
+.footer2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 10px;
+    text-align: center;
+    background-color: #ddd;
+}
 /* utilities start */
 .w-90 {
   width: 90%;
@@ -233,7 +241,13 @@ footer {
   border-radius: 0.25rem;
 }
 .detail-container {
-  padding: 0 1.2rem;
+    position:absolute;
+    height: 500px;
+    width: 500px;
+    left:50%;
+    display: inline-block;
+    padding: 0 1.2rem; 
+
 }
 
 
@@ -264,6 +278,7 @@ footer {
     flex-basis: 96%;
   }
 }
+
 
 h1 {
     margin-bottom: 10px;
