@@ -1,6 +1,7 @@
 ﻿using GPUStoreMVC.Models.Data;
 using GPUStoreMVC.Models.Other;
 using GPUStoreMVC.Repositories.Abstract;
+using System.Text;
 
 namespace GPUStoreMvc.Repositories.Implementation
 {
@@ -41,15 +42,19 @@ namespace GPUStoreMvc.Repositories.Implementation
                 {
                     return false;
                 }
+
                 ctx.GPUs.Add(model);
                 ctx.SaveChanges();
                 return true;
+
+
             }
             catch (Exception ex)
             {
                 return false;
             }
         }
+
 
         public bool Delete(int GPUID)
         {
@@ -64,6 +69,7 @@ namespace GPUStoreMvc.Repositories.Implementation
             }
             catch (Exception ex)
             {
+
                 return false;
             }
         }
