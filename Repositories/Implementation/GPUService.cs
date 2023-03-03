@@ -43,7 +43,6 @@ namespace GPUStoreMvc.Repositories.Implementation
                     return false;
                 }
 
-
                 ctx.GPUs.Add(model);
                 ctx.SaveChanges();
                 return true;
@@ -110,7 +109,6 @@ namespace GPUStoreMvc.Repositories.Implementation
         {
             try
             {
-
                 if (model.Name.Length < 3)
                 {
                     return false;

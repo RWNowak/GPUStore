@@ -19,6 +19,7 @@
         <div class="detail-container">
             <h1>@Model.Name</h1>
             <p><span class="details">Price:</span> @Model.Price $</p>
+            <div></div>
             <p><span class="details">Release Date: </span>@Model.ReleaseDate</p>
             <p><span class="details">Chip:</span> @Model.Chip</p>
             <p><span class="details">Bus:</span> @Model.Bus</p>
@@ -28,14 +29,10 @@
     <div class="w-80 m-auto">
         <a href="/Home/Index" class="btn btn-default">Back</a>
     </div>
-<style>
-    .details{
-        font-weight:bold
-    }
-
-    .btn-default:hover{
-        color:lime
+    <style>
+        .details {
+            font-weight: bold
         }
-</style>
+    </style>
 </body>
 </html>

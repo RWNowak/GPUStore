@@ -33,7 +33,7 @@ namespace GPUStoreMVC.Controllers
                 var fileResult = this._fileService.SaveImage(model.ImageFile);
                 if (fileResult.Item1 == 0)
                 {
-                    TempData["msg"] = "A problem occured while uploading an image";
+                    TempData["error"] = "A problem occured while uploading an image";
                     return View(model);
                 }
                 var imageName = fileResult.Item2;
@@ -47,7 +47,7 @@ namespace GPUStoreMVC.Controllers
             }
             else
             {
-                TempData["msg"] = "Error on server side";
+                TempData["error"] = "Error on server side";
                 return View(model);
             }
         }
@@ -79,7 +79,7 @@ namespace GPUStoreMVC.Controllers
                 var fileResult = this._fileService.SaveImage(model.ImageFile);
                 if (fileResult.Item1 == 0)
                 {
-                    TempData["msg"] = "File could not be saved";
+                    TempData["error"] = "File could not be saved";
                     return View(model);
                 }
                 var imageName = fileResult.Item2;
@@ -93,7 +93,7 @@ namespace GPUStoreMVC.Controllers
             }
             else
             {
-                TempData["msg"] = "Error on server side";
+                TempData["error"] = "Error on server side";
                 return View(model);
             }
         }
@@ -107,7 +107,7 @@ namespace GPUStoreMVC.Controllers
             }
             else
             {
-                TempData["msg"] = "Error on server side";
+                TempData["error"] = "Error on server side";
                 return RedirectToAction(nameof(GPUList));
             }
             

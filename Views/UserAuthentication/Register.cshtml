@@ -13,21 +13,25 @@
         <form class="w-100" asp-action="Register" method="post">
             <h1>Sign Up</h1>
             <h2>Become a member of GPU Store</h2>
-            <div class="input-container">
+            <div class="input-container" style="margin-bottom: -30px">
                 <label asp-for="Name" class="w-100">Name</label>
                 <input type="text" class="input" asp-for="Name">
             </div>
-            <div class="input-container">
+            <div class="input-container" style="margin-bottom: -25px">
                 <label asp-for="Username" class="w-100">Username</label>
                 <input type="text" class="input" asp-for="Username">
             </div>
-            <div class="input-container">
+            <div class="input-container" style="margin-bottom: -20px">
                 <label asp-for="Email" class="w-100">Email</label>
                 <input type="text" class="input" asp-for="Email">
             </div>
             <div class="input-container" style="margin-top: -30px;">
                 <label asp-for="Password" class="w-100">Password</label>
                 <input type="password" class="input" asp-for="Password">
+            </div>
+            <div class="input-container" style="margin-top: -50px;">
+                <label asp-for="PasswordConfirm" class="w-100">Confirm Password</label>
+                <input type="password" class="input" asp-for="PasswordConfirm">
             </div>
             <div class="input-container">
                 <button class="btn btn-default" type="submit">Sign Up</button>
