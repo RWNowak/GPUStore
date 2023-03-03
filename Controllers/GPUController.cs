@@ -47,7 +47,7 @@ namespace GPUStoreMVC.Controllers
             }
             else
             {
-                TempData["error"] = "Error on server side";
+                TempData["error"] = "Please input correct data";
                 return View(model);
             }
         }

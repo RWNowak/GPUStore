@@ -31,12 +31,6 @@ namespace GPUStoreMvc.Repositories.Implementation
                 {
                     return false;
                 }
-
-                if (model.ImageFile == null)
-                {
-                    return false;
-                }
-
                 if (model.Name.StartsWith("!") || model.Name.StartsWith(".") || model.Name.StartsWith(","))
                 {
                     return false;
@@ -119,12 +113,6 @@ namespace GPUStoreMvc.Repositories.Implementation
                 {
                     return false;
                 }
-
-                if (model.ImageFile == null)
-                {
-                    return false;
-                }
-
                 if (model.Name.StartsWith("!") || model.Name.StartsWith(".") || model.Name.StartsWith(","))
                 {
                     return false;

@@ -9,7 +9,6 @@ namespace GPUStoreMVC.Models.Data
         {
 
         }
-
         public DbSet<GPU> GPUs { get; set; }
     }
 }
