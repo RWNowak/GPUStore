@@ -1,6 +1,6 @@
 # GPUStore
 
-GPUStore is a simple implementation of a store interface that could be use to buy GPU cards.
+GPUStore is a simple a store interface for GPU Cards.
 
 The main functionalities are:
 
